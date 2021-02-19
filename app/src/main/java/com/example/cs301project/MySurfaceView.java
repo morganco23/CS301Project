@@ -30,16 +30,18 @@ public class MySurfaceView extends SurfaceView {
     }
 
     protected void onDraw(Canvas canvas) {
-        Paint red = new Paint();
-        red.setColor(Color.RED);
 
 
-
-        Bitmap image = BitmapFactory.decodeResource(getResources(), R.drawable.chessboard);
+        // loading, scaling, and displaying chessboard
+        Bitmap chessboardimg = BitmapFactory.decodeResource(getResources(), R.drawable.chessboard);
 
         int w = canvas.getWidth();
 
-        image = Bitmap.createScaledBitmap(image,w,w, false);
+        chessboardimg = Bitmap.createScaledBitmap(chessboardimg,w,w, false);
+
+        canvas.drawBitmap(chessboardimg, 0.f, 0.f, null);
+
+        //drawing the rooks
 
         Bitmap whiteRook = BitmapFactory.decodeResource(getResources(), R.drawable.whiterookpng);
         int rookwidth = w/9;
@@ -51,9 +53,11 @@ public class MySurfaceView extends SurfaceView {
         black.setColor(Color.BLACK);
         ColorFilter blackFilter = new PorterDuffColorFilter(ContextCompat.getColor(this.getContext(), R.color.black), PorterDuff.Mode.SRC_IN);
         black.setColorFilter(blackFilter);
-        canvas.drawBitmap(image, 0.f, 0.f, null);
 
-        canvas.drawBitmap(whiteRook,0,0,null);
         canvas.drawBitmap(whiteRook, w-w/8,0,black);
+        canvas.drawBitmap(whiteRook,0,0,black);
+
+        canvas.drawBitmap(whiteRook, 0,w-w/8,null);
+        canvas.drawBitmap(whiteRook,w-w/8,w-w/8,null);
     }
 }
