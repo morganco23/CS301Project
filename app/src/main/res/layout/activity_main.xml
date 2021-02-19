@@ -58,8 +58,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="32dp"
-                android:layout_weight="1"
-                android:text="TextView" />
+                android:layout_weight="1" />
 
             <TextView
                 android:id="@+id/textView"
@@ -75,13 +74,13 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_height="831dp"
             android:layout_width="match_parent"
+            android:layout_height="900dp"
             android:orientation="horizontal">
 
             <com.example.cs301project.MySurfaceView
                 android:id="@+id/chessboard"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 tools:visibility="visible" />
@@ -97,8 +96,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="32dp"
-                android:layout_weight="1"
-                android:text="TextView" />
+                android:layout_weight="1" />
 
             <TextView
                 android:id="@+id/textView3"
